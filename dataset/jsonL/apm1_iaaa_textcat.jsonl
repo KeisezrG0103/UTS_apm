@@ -1,0 +1,68 @@
+{
+  "MANFAAT_POSITIVE": {
+    "n_examples": 1011,
+    "n_categories": 6,
+    "n_coincident_examples": 491,
+    "n_single_annotation": 31,
+    "n_annotators": 2,
+    "avg_raters_per_example": 1.9367816091954022,
+    "percent_agreement": 0.9042769857433809,
+    "kripp_alpha": 0.328291868027013,
+    "gwet_ac2": 0.8895476554150569
+  },
+  "MANFAAT_NEGATIVE": {
+    "n_examples": 1011,
+    "n_categories": 6,
+    "n_coincident_examples": 491,
+    "n_single_annotation": 31,
+    "n_annotators": 2,
+    "avg_raters_per_example": 1.9367816091954022,
+    "percent_agreement": 0.9979633401221996,
+    "kripp_alpha": 0,
+    "gwet_ac2": 0.9979516053264486
+  },
+  "MANFAAT_NEUTRAL": {
+    "n_examples": 1011,
+    "n_categories": 6,
+    "n_coincident_examples": 491,
+    "n_single_annotation": 31,
+    "n_annotators": 2,
+    "avg_raters_per_example": 1.9367816091954022,
+    "percent_agreement": 0.9063136456211812,
+    "kripp_alpha": 0.07015766478826321,
+    "gwet_ac2": 0.8961238447859223
+  },
+  "KUALITAS_POSITIVE": {
+    "n_examples": 1011,
+    "n_categories": 6,
+    "n_coincident_examples": 491,
+    "n_single_annotation": 31,
+    "n_annotators": 2,
+    "avg_raters_per_example": 1.9367816091954022,
+    "percent_agreement": 0.945010183299389,
+    "kripp_alpha": 0.045093037215007556,
+    "gwet_ac2": 0.9418705838456852
+  },
+  "KUALITAS_NEGATIVE": {
+    "n_examples": 1011,
+    "n_categories": 6,
+    "n_coincident_examples": 491,
+    "n_single_annotation": 31,
+    "n_annotators": 2,
+    "avg_raters_per_example": 1.9367816091954022,
+    "percent_agreement": 0.9959266802443992,
+    "kripp_alpha": 3.648585236003438e-12,
+    "gwet_ac2": 0.9959110512897387
+  },
+  "KUALITAS_NEUTRAL": {
+    "n_examples": 1011,
+    "n_categories": 6,
+    "n_coincident_examples": 491,
+    "n_single_annotation": 31,
+    "n_annotators": 2,
+    "avg_raters_per_example": 1.9367816091954022,
+    "percent_agreement": 0.9714867617107943,
+    "kripp_alpha": 0.12075993091560398,
+    "gwet_ac2": 0.9705994606761286
+  }
+}

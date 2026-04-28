@@ -1,0 +1,2 @@
+n_examples,n_categories,n_coincident_examples,n_single_annotation,n_annotators,avg_raters_per_example,pairwise_f1,pairwise_recall,pairwise_precision
+1044,5,522,0,2,2.0,0.38,0.35,0.49

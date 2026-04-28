@@ -1,0 +1,4 @@
+dataset,rows_or_examples,main_quality_metric,metric_value
+apm1_iaaa,1044,pairwise_f1,0.38
+apm1_iaaa_textcat,6,mean percent_agreement,0.9534962661235573
+db_apm1_genap2526_v2,1044,avg_n_spans,4.2940613026819925

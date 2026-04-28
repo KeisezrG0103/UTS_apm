@@ -1,0 +1,32 @@
+{
+  "apm1_iaaa": {
+    "n_examples": 1044,
+    "n_categories": 5,
+    "pairwise_f1": 0.38,
+    "pairwise_precision": 0.49,
+    "pairwise_recall": 0.35
+  },
+  "apm1_iaaa_textcat": {
+    "labels": [
+      "MANFAAT_POSITIVE",
+      "MANFAAT_NEGATIVE",
+      "MANFAAT_NEUTRAL",
+      "KUALITAS_POSITIVE",
+      "KUALITAS_NEGATIVE",
+      "KUALITAS_NEUTRAL"
+    ]
+  },
+  "db_apm1_genap2526_v2": {
+    "n_rows": 1044,
+    "avg_text_len_word": 60.22605363984675,
+    "avg_n_tokens": 67.2624521072797,
+    "avg_n_spans": 4.2940613026819925,
+    "span_label_distribution": {
+      "PER-PM": 1211,
+      "MEDICAL": 1196,
+      "LOCATION": 955,
+      "ORGANIZATION": 825,
+      "PER-PTG": 296
+    }
+  }
+}
