@@ -54,11 +54,12 @@ st.markdown(
     .hero h1 {
         margin: 0;
         font-size: 2rem;
+        color: rgba(255, 255, 255, 1);
         line-height: 1.15;
     }
     .hero p {
         margin: 0.45rem 0 0 0;
-        color: rgba(255,255,255);
+        color: rgba(255, 255, 255, 1);
         font-size: 0.95rem;
     }
     </style>
