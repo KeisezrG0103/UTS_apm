@@ -58,7 +58,7 @@ st.markdown(
     }
     .hero p {
         margin: 0.45rem 0 0 0;
-        color: rgba(255,255,255,0.9);
+        color: rgba(255,255,255);
         font-size: 0.95rem;
     }
     </style>
