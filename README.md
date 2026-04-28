@@ -8,49 +8,7 @@ Dataset dibangun melalui proses *scraping* menggunakan Python dan Selenium, kemu
 Link untuk streamlit dashboard EDA: [https://uts-apm.streamlit.app/](https://uts-apm.streamlit.app/)
 ---
 
-## 2. Metode Pengumpulan Data
-
-### 2.1 Pendekatan yang Digunakan
-
-Proses pengumpulan data dilakukan dengan pendekatan **web scraping semi-manual**.  
-Metode ini dipilih karena konten media sosial bersifat dinamis, sering berubah, dan tidak selalu mudah diakses melalui scraping statis biasa.
-
-Secara umum alurnya adalah sebagai berikut:
-
-1. Browser dibuka secara otomatis menggunakan Selenium.
-2. Pengguna melakukan login atau navigasi manual ke halaman target.
-3. Pengguna memilih topik, kata kunci, grup, halaman, atau hasil pencarian yang relevan.
-4. Script melakukan pengambilan teks postingan atau tweet secara berulang melalui proses scroll.
-5. Data hasil scraping disimpan ke dalam file CSV.
-
-### 2.2 Pengumpulan Data dari X
-
-Pada platform X, scraping dilakukan menggunakan Selenium dengan browser Chrome.  
-Pengguna membuka X, melakukan pencarian manual berdasarkan kata kunci yang relevan, lalu script mengambil tweet dari elemen yang sesuai pada halaman.
-
-Ciri utama proses ini:
-
-- login dilakukan secara manual oleh pengguna,
-- pencarian dilakukan berdasarkan kata kunci atau tagar,
-- data dikumpulkan dari hasil scroll berulang,
-- tweet yang sudah terbaca disimpan ke dalam struktur data unik untuk menghindari duplikasi.
-
-### 2.3 Pengumpulan Data dari Facebook
-
-Pada platform Facebook, scraping dilakukan menggunakan Selenium dengan browser Microsoft Edge.  
-Pengguna diarahkan untuk mencari halaman, grup, atau postingan yang relevan, lalu script mengekstrak teks postingan dari elemen HTML yang sesuai.
-
-Ciri utama proses ini:
-
-- browser dibuka otomatis,
-- pengguna memilih target secara manual,
-- script mengekstrak isi postingan setelah elemen diperluas,
-- proses scroll digunakan untuk memuat lebih banyak konten,
-- hasil akhir disimpan dalam bentuk CSV.
-
----
-
-## 3. Tools dan Teknologi yang Digunakan
+## 2. Tools dan Teknologi yang Digunakan
 
 Beberapa tools dan teknologi yang digunakan dalam proyek ini adalah:
 
@@ -65,9 +23,9 @@ Beberapa tools dan teknologi yang digunakan dalam proyek ini adalah:
 
 ---
 
-## 4. Cakupan Sumber Data dan Periode Waktu
+## 3. Cakupan Sumber Data dan Periode Waktu
 
-### 4.1 Sumber Data
+### 3.1 Sumber Data
 
 Sumber data pada proyek ini berasal dari dua platform media sosial:
 
@@ -82,7 +40,7 @@ Topik data berfokus pada isu yang berkaitan dengan:
 - variasi keyword terkait Prabowo dan kebijakan kesehatan
 - topik yang muncul dalam diskusi publik yang masih relevan dengan program tersebut
 
-### 4.2 Periode Pengambilan Data
+### 3.2 Periode Pengambilan Data
 
 Berdasarkan file hasil scraping yang tersedia di workspace, data dikumpulkan dalam beberapa periode, terutama pada:
 
@@ -99,6 +57,49 @@ File-file hasil scraping menunjukkan timestamp pada beberapa tanggal berikut:
 Dengan demikian, dataset merepresentasikan potret percakapan publik pada rentang waktu tersebut.
 
 ---
+
+## 4. Metode Pengumpulan Data
+
+### 4.1 Pendekatan yang Digunakan
+
+Proses pengumpulan data dilakukan dengan pendekatan **web scraping semi-manual**.  
+Metode ini dipilih karena konten media sosial bersifat dinamis, sering berubah, dan tidak selalu mudah diakses melalui scraping statis biasa.
+
+Secara umum alurnya adalah sebagai berikut:
+
+1. Browser dibuka secara otomatis menggunakan Selenium.
+2. Pengguna melakukan login atau navigasi manual ke halaman target.
+3. Pengguna memilih topik, kata kunci, grup, halaman, atau hasil pencarian yang relevan.
+4. Script melakukan pengambilan teks postingan atau tweet secara berulang melalui proses scroll.
+5. Data hasil scraping disimpan ke dalam file CSV.
+
+### 4.2 Pengumpulan Data dari X
+
+Pada platform X, scraping dilakukan menggunakan Selenium dengan browser Chrome.  
+Pengguna membuka X, melakukan pencarian manual berdasarkan kata kunci yang relevan, lalu script mengambil tweet dari elemen yang sesuai pada halaman.
+
+Ciri utama proses ini:
+
+- login dilakukan secara manual oleh pengguna,
+- pencarian dilakukan berdasarkan kata kunci atau tagar,
+- data dikumpulkan dari hasil scroll berulang,
+- tweet yang sudah terbaca disimpan ke dalam struktur data unik untuk menghindari duplikasi.
+
+### 4.3 Pengumpulan Data dari Facebook
+
+Pada platform Facebook, scraping dilakukan menggunakan Selenium dengan browser Microsoft Edge.  
+Pengguna diarahkan untuk mencari halaman, grup, atau postingan yang relevan, lalu script mengekstrak teks postingan dari elemen HTML yang sesuai.
+
+Ciri utama proses ini:
+
+- browser dibuka otomatis,
+- pengguna memilih target secara manual,
+- script mengekstrak isi postingan setelah elemen diperluas,
+- proses scroll digunakan untuk memuat lebih banyak konten,
+- hasil akhir disimpan dalam bentuk CSV.
+
+---
+
 
 ## 5. Struktur Data Hasil Scraping
 
@@ -189,7 +190,7 @@ Format penyimpanan dapat berupa:
 
 ---
 
-## 7. Proses Pembersihan Khusus pada JSONL
+## 7. Data JSONL
 
 Selain data CSV hasil scraping, proyek ini juga memiliki file JSONL untuk anotasi dan evaluasi agreement.  
 Contoh file yang digunakan:
@@ -260,6 +261,8 @@ Dari hasil eksplorasi yang tersedia, beberapa temuan utama adalah:
 - Label `PER-PTG` memiliki support paling kecil sehingga cenderung lebih sulit diprediksi.
 - Pada file `apm1_iaaa_textcat.jsonl`, beberapa label menunjukkan agreement tinggi, sehingga lebih aman digunakan dalam dataset bersih.
 - Pada data anotasi teks, label span paling sering muncul adalah `PER-PM` dan `MEDICAL`.
+
+
 
 
 
