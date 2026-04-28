@@ -553,6 +553,51 @@ def render_textcat():
     # st.caption("Catatan: Kripp alpha dapat lebih rendah dari pada label yang sangat tidak seimbang. Gunakan bersama percent agreement dan Gwet AC2.")
 
 
+def render_labeled_text_block(text, spans):
+
+    LABEL_COLORS = {
+        "PER-PTG": "#7C3AED",
+        "PER-PM": "#2563EB",
+        "LOCATION": "#059669",
+        "ORGANIZATION": "#D97706",
+        "MEDICAL": "#DC2626",
+    }
+    if not isinstance(text, str):
+        return ""
+
+    if not isinstance(spans, list) or not spans:
+        return text
+
+    spans = [s for s in spans if isinstance(s, dict) and s.get(
+        "start") is not None and s.get("end") is not None]
+    spans = sorted(spans, key=lambda s: (s["start"], s["end"]))
+
+    pieces = []
+    cursor = 0
+
+    for span in spans:
+        start = int(span["start"])
+        end = int(span["end"])
+        label = str(span.get("label", "UNKNOWN"))
+        color = LABEL_COLORS.get(label, "#64748B")
+
+        if start < cursor:
+            continue
+
+        pieces.append(text[cursor:start])
+
+        entity_text = text[start:end]
+        pieces.append(
+            f'<span style="background-color:{color}; color:white; padding:2px 8px; border-radius:8px;">'
+            f'[{entity_text}] {label}'
+            f'</span>'
+        )
+
+        cursor = end
+
+    pieces.append(text[cursor:])
+    return "".join(pieces)
+
 def render_records():
     st.subheader("EDA: db_apm1_genap2526_v2.jsonl")
 
@@ -660,6 +705,9 @@ def render_records():
             fig = px.bar(filtered_combo.sort_values("count"), x="count", y="span_label_combo", orientation="h", title="Top label combinations")
             fig.update_layout(template="plotly_white", height=500)
             st.plotly_chart(fig, use_container_width=True)
+            
+
+
 
     # st.markdown("### Export Data Terfilter")
     # d1, d2 = st.columns(2)
@@ -710,6 +758,10 @@ def render_records():
         )
         with st.expander("Raw JSON row", expanded=False):
             st.json(json.loads(json.dumps(row.to_dict(), default=str)))
+        
+        with st.expander("Text dengan highlight span", expanded=True):
+            st.markdown(render_labeled_text_block(
+                row["text"], row["spans"]), unsafe_allow_html=True)
 
     with info_right:
         tokens = row["tokens"] if isinstance(row["tokens"], list) else []
@@ -720,6 +772,8 @@ def render_records():
 
         st.write("Spans")
         st.dataframe(pd.DataFrame(spans), use_container_width=True)
+        
+        
 
 
 def render_flexible_explorer():
