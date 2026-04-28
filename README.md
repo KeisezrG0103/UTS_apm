@@ -5,6 +5,7 @@
 Tugas ini menggunakan data percakapan publik dari media sosial **Facebook** dan **X (Twitter)** yang berkaitan dengan topik program **cek kesehatan gratis** serta kebijakan atau diskusi yang relevan dengan topik tersebut.  
 Dataset dibangun melalui proses *scraping* menggunakan Python dan Selenium, kemudian dilanjutkan dengan tahap pembersihan, penggabungan, penyaringan, dan penyusunan ulang data agar siap digunakan untuk analisis maupun pemodelan.
 
+Link untuk streamlit dashboard EDA: [https://uts-apm.streamlit.app/](https://uts-apm.streamlit.app/)
 ---
 
 ## 2. Metode Pengumpulan Data
