@@ -378,7 +378,6 @@ def render_overview():
         st.metric("High-confidence labels", high_count)
         st.metric("Medium-confidence labels", medium_count)
         st.metric("Low-confidence labels", low_count)
-        st.caption("Label dengan agreement tinggi lebih aman dipakai untuk dataset bersih. Label rendah sebaiknya direview atau dibuang.")
 
     # st.markdown("### Download Ringkasan")
     # col_a, col_b, col_c = st.columns(3)
